@@ -102,6 +102,6 @@ Your client has asked you to make this library available via an API. Your API sh
 * If a request is sent to "/mmmr" that are is not a POST request, a JSON response and a 404 error should be returned.
 ___
 
-<sup id="footer-1">1</sup> Representational State Transfer Application Programming Interface [&#8617;](#reference-1)
+<sup id="footer-1">[1](#reference-1)</sup> Representational State Transfer Application Programming Interface
 
 
