@@ -1,5 +1,5 @@
 # Authorship and Credits
-This PHP Rest API<sup id="reference-1">1(#f1)</sup> was developed by **Marcus** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
+This PHP Rest API<sup id="reference-1">[1](#footer-1)</sup> was developed by **Marcus** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
 
 The rewrite-rules were found back in 2013 from an unknown website, and have been reposted below in Part 3, Rewrite Rules.
 
@@ -100,7 +100,8 @@ Your client has asked you to make this library available via an API. Your API sh
 * If any value does not exist, an empty string should be returned.
 * Any system errors should be handled gracefully with a JSON response and a 500 error.
 * If a request is sent to "/mmmr" that are is not a POST request, a JSON response and a 404 error should be returned.
+___
 
-<b id="footer-1">1</b> Representational State Transfer Application Programming Interface [&#8617;](#ref-1)
+<sup id="footer-1">1</sup> Representational State Transfer Application Programming Interface [&#8617;](#reference-1)
 
 
