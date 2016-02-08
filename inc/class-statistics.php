@@ -20,8 +20,7 @@
  * Currently contains methods for computing basic stats functions.
  *
  * TODO: Allow statistical methods to be called individually outside 
- * the class by allowing method allowing them to accept arguments as
- * paremeters
+ * the class.  Give methods, add'ls parameters variables
  *
  * @since 0.0.1 (January 21, 2016)
  *
