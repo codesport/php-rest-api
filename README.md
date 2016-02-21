@@ -1,5 +1,5 @@
 # Authorship and Credits
-This PHP Rest API<sup id="reference-1">[1](#footer-1)</sup> was developed by **Marcus** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
+This PHP [Rest API](https:/google.com/search?q=Rest)<sup id="reference-1">[1](#footer-1)</sup> along with this `README` file was developed by **Marcus** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
 
 The rewrite-rules were found back in 2013 from an unknown website, and have been reposted below in Part 3, Rewrite Rules.
 

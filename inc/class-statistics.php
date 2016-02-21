@@ -4,6 +4,10 @@
  * Class library file for statistical methods
  *
  * Obect Oriented Programming (OOP) demonstration using built-in PHP array functions
+ *
+ * In PHP we typically use explicit getter and setter methods. "Getters" gather and package
+ * the information computed by "setter" methods.
+ *
  * Extra verbose commenting for usage in future teaching session. PHP coding standards
  * from @link https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/
  * and @link https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/
@@ -23,7 +27,6 @@
  * the class.  Give methods, add'ls parameters variables
  *
  * @since 0.0.1 (January 21, 2016)
- *
  */
 class Statistics {
 
