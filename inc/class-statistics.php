@@ -48,32 +48,40 @@ class Statistics {
 	 * 
 	 */
 	public $array_of_numbers; 	// sent by client
-	public $array_length;		// calculated by constructor
-	public $statistics_array;	// built by get_all_statistics() method
-	public $submission_type; 	// auto-sent by mmmr.php.  Values: 'web-client' or 'API'
+	public $submission_type; 	// auto-sent by mmmr.php. Expected values: 'web-client' or 'API'
 	
 	//may optionally declare as 'protected' if we want to support inheritance 
 	private $mean; 
 	private $mode;
 	private $median;
 	private $range;
+	private $statistics_array;	//built by get_all_statistics() method
 
-	//Use constructor for intitializing class globals. '$this' is shorthand for  'apply to any created object' 
-	function __construct( $array_from_client, $submission_type ) {
+	//Use constructor for intitializing class globals. '$this' is shorthand for 'apply to any created object' 
+	function __construct( $array_from_client, $submission_type='web-client' ) {
 	
 		$this->array_of_numbers  = $array_from_client;
-		$this->array_length 	 = count( $this->array_of_numbers );
 		$this->submission_type   = $submission_type;
 
+		/*
+		* Initialize all private variables through method calls. 
+		* BUT... Is this a best practice?
+		*/
+		$this->set_mean( $this->array_of_numbers );
+		$this->set_mode( $this->array_of_numbers );
+		$this->set_median( $this->array_of_numbers );
+		$this->set_range( $this->array_of_numbers );
 	}
 
-
+	/*
+	* Get all statistics in bulk and return to user as array
+	*/
 	public function get_all_statistics() {
 
-		$statistics_array['Mean'] 	= round( $this->set_mean(), 3);
-		$statistics_array['Mode'] 	= $this->set_mode();
-		$statistics_array['Median']	= round( $this->set_median(), 3);
-		$statistics_array['Range']	= round( $this->set_custom_range(), 3);
+		$statistics_array['Mean'] 	= round ( $this->get_mean(), 2);
+		$statistics_array['Mode'] 	= $this->get_mode();
+		$statistics_array['Median']	= $this->get_median();
+		$statistics_array['Range']	= $this->get_range();
 
 		return $statistics_array;
 
@@ -89,12 +97,17 @@ class Statistics {
 	 * array_sum — Calculate the total of all values in an array
 	 * @link http://php.net/manual/en/function.array-sum.php*
 	 *
-	 * @param none
-	 * @return integer || float	 
+	 * @param array $array_of_numbers Numbers used to calculate mean.
 	 */
-	public function set_mean() {
+	public function set_mean( $array_of_numbers ) {
 
-		$this->mean = array_sum( $this->array_of_numbers ) / $this->array_length ;	
+		$this->mean = array_sum( $array_of_numbers ) / count( $array_of_numbers ) ;	
+
+	}
+
+	public function get_mean() {
+
+		return $this->mean;	
 
 	}
 
@@ -102,6 +115,8 @@ class Statistics {
 	/**
 	 * Setter to compute mode by maximizing built-in PHP functions
 	 *
+	 * Mode: the number that occurs the most often. If no number is repeated, there is no mode
+	 * 
 	 * array_keys — returns keys or a subset of the keys of an array. Orig array keys become values
 	 * shall use a subset specified by the first key of the asorted $array_of_numbers_by_frequency variable
 	 * 
@@ -115,24 +130,23 @@ class Statistics {
 	 *
 	 * array_search — searches the array for $needle and returns the corresponding key if successful
 	 * @link http://php.net/manual/en/function.array-search.php
+	 * 
+	 * @param array $array_of_numbers Numbers used to calculate mode.
 	 */
-	public function set_mode() {
+	public function set_mode( $array_of_numbers ) {
 
-		$array_of_numbers_by_frequency = array_count_values( $this->array_of_numbers ); //original_num => frequency 
+		$array_of_numbers_by_frequency = array_count_values( $array_of_numbers ); //original_num => frequency 
 
 		$max_occurence = max( $array_of_numbers_by_frequency ); //max gives 'max' value in an array
 
 
-		if ( $max_occurence === 1 && $this->submission_type == 'web-client' ) { //if no mode. Forcing type recognition with ===
+		if ( $max_occurence === 1 ) { //if no mode. Forcing type recognition with ===
+			/*
+			* give an null or empty value if no mode exists.
+			*/
 
 			$this->mode = null;
-
-		} elseif ( $max_occurence === 1 && $this->submission_type == 'API' ) { //Forcing type recognition. Forcing type recognition with ===
-			/*
-			* If client is using via api, just give hime
-			* an empty value if no mode exists.
-			*/
-			$this->mode = '';
+			//$this->mode = '';
 
 		} else {
 
@@ -145,10 +159,16 @@ class Statistics {
 
 			} else { //multiple modes exists
 
-				$this->mode = $mode_raw; //return an array of modes
+				$this->mode = null; //return a null value
 			}
 
 		}
+
+	}
+
+	public function get_mode() {
+
+		return $this->mode;	
 
 	}
 
@@ -165,24 +185,23 @@ class Statistics {
 	 *  	b. If array size (n) is even: Two elements in the middle are medians at indexes 
 	 * 	       floor((n-1)/2) and at n/2
 	 * 
-	
-	 * 
-	 *
+	 * @param array $array_of_numbers Numbers used to calculate median.
 	 */
-	public function set_median() {
+	public function set_median( $array_of_numbers ) {
 
-		$sorted_array = sort( $this->array_of_numbers );
+		sort( $array_of_numbers );
+		$array_length = count( $array_of_numbers );
 
 		//check if odd (non-zero length modulo 2)
-		if ( $this->array_length % 2 ) { 
+		if ( $array_length % 2 ) { 
 
-			$this->median = $sorted_array[ floor( $this->array_length - 1 ) / 2 ];
+			$this->median = $array_of_numbers[ floor( $array_length - 1 ) / 2 ];
 
 		} else { //if even we have 2 medians
 
-			$first_median = $sorted_array[ floor( $this->array_length - 1 ) / 2 ];
+			$first_median = $array_of_numbers[ floor( $array_length - 1 ) / 2 ];
 
-			$second_median = $sorted_array[ floor( $this->array_length ) / 2 ];
+			$second_median = $array_of_numbers[ floor( $array_length ) / 2 ];
 
 			$this->median = ( $first_median + $second_median ) / 2;
 
@@ -190,21 +209,33 @@ class Statistics {
 
 	}
 
+	public function get_median() {
+
+		return $this->median;	
+
+	}
+
 
 	/**
 	 * Setter to compute distance between high and low numbers
 	 *
+	 * @param array $array_of_numbers Numbers used to calculate range.
 	 */
-	public function set_custom_range() {
+	public function set_range( $array_of_numbers ) {
 
-		$low = min( $this->array_of_numbers );
-		$high = max( $this->array_of_numbers );
+		$low = min( $array_of_numbers );
+		$high = max( $array_of_numbers );
 
-		$range = $high - $low; 
-
-		return $range;
+		$this->range = $high - $low; 
 
 	}
+
+
+	public function get_range() {
+
+		return $this->range;	
+
+	}	
 
 
 } 
