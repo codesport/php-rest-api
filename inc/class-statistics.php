@@ -12,6 +12,14 @@
  * from @link https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/
  * and @link https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/
  *
+ *	Usage:
+ *		1. Instiate new object while simultaneously intitializing $array_from_client, $submission_type:
+ *			$statistics_object = new Statistics( $array_of_numbers['numbers'], 'API' );
+ *
+ *		2. Send object to the method (getter function) get_all_statistics() and store output in an array
+ *			$server_response['result'] = $statistics_object->get_all_statistics();
+ *
+ *
  * @package    Fizz Buzz for Company NC001
  * @version    0.0.1 (January 21, 2016)
  * @since      0.0.1 (January 21, 2016)
@@ -24,7 +32,7 @@
  * Currently contains methods for computing basic stats functions.
  *
  * TODO: Allow statistical methods to be called individually outside 
- * the class.  Give methods, add'ls parameters variables
+ * the class.  Give methods parameters variables to accept 'array of numbers'
  *
  * @since 0.0.1 (January 21, 2016)
  */
@@ -33,14 +41,24 @@ class Statistics {
 	/*
 	 * First Declare any and all member variables (properties/class globals)
 	 * used within the class. Set default values if needed
+	 * 
+	 * All class globals should probably be made either private or protected
+	 * since they will only be modified and set from within the class, and not from 
+	 * external class calling or instantiation
+	 * 
 	 */
-	public $array_of_numbers;
-	public $array_length;
-	public $statistics_array;
-	public $submission_type; //web-client or API
+	public $array_of_numbers; 	// sent by client
+	public $array_length;		// calculated by constructor
+	public $statistics_array;	// built by get_all_statistics() method
+	public $submission_type; 	// auto-sent by mmmr.php.  Values: 'web-client' or 'API'
 	
+	//may optionally declare as 'protected' if we want to support inheritance 
+	private $mean; 
+	private $mode;
+	private $median;
+	private $range;
 
-	//Use constructor for intitializing class globals 
+	//Use constructor for intitializing class globals. '$this' is shorthand for  'apply to any created object' 
 	function __construct( $array_from_client, $submission_type ) {
 	
 		$this->array_of_numbers  = $array_from_client;
@@ -76,9 +94,7 @@ class Statistics {
 	 */
 	public function set_mean() {
 
-		$mean = array_sum( $this->array_of_numbers ) / $this->array_length ;	
-
-		return $mean;
+		$this->mean = array_sum( $this->array_of_numbers ) / $this->array_length ;	
 
 	}
 
@@ -109,24 +125,27 @@ class Statistics {
 
 		if ( $max_occurence === 1 && $this->submission_type == 'web-client' ) { //if no mode. Forcing type recognition with ===
 
-			return null;
+			$this->mode = null;
 
 		} elseif ( $max_occurence === 1 && $this->submission_type == 'API' ) { //Forcing type recognition. Forcing type recognition with ===
-
-			return '';// can just leave this empty
+			/*
+			* If client is using via api, just give hime
+			* an empty value if no mode exists.
+			*/
+			$this->mode = '';
 
 		} else {
 
 			//Give me all keys (original numbers) that equal $max_occurences 
-			$mode = array_keys( $array_of_numbers_by_frequency, $max_occurence ); 
+			$mode_raw = array_keys( $array_of_numbers_by_frequency, $max_occurence ); 
 
-			if ( count( $mode ) === 1 ) { //if only a single mode exists. Forcing type recognition with ===
+			if ( count( $mode_raw ) === 1 ) { //if only a single mode exists. Forcing type recognition with ===
 
-				return $mode[0];
+				$this->mode = $mode_raw[0];
 
 			} else { //multiple modes exists
 
-				return $mode; //return an array of modes
+				$this->mode = $mode_raw; //return an array of modes
 			}
 
 		}
@@ -135,15 +154,39 @@ class Statistics {
 
 	/**
 	 * Setter to compute median
+	 * 
+	 *  How to compute:
+	 * 
+	 *  1. Array most be sorted first
+	 *  2. Goal is find position (i.e, index) of median
+	 * 	3. Assume 0-indexed array structure. Therefore:
+	 *  	a. If array size (n) is odd: Median is at index (n-1)/2 
+	 * 		   NB: subtract 1 to make 0-indexed positioning
+	 *  	b. If array size (n) is even: Two elements in the middle are medians at indexes 
+	 * 	       floor((n-1)/2) and at n/2
+	 * 
+	
+	 * 
 	 *
 	 */
 	public function set_median() {
 
-		$middle_of_array = $this->array_length / 2 ;
+		$sorted_array = sort( $this->array_of_numbers );
 
-		$median = $this->array_of_numbers[$middle_of_array - 1]; 
+		//check if odd (non-zero length modulo 2)
+		if ( $this->array_length % 2 ) { 
 
-		return $median;
+			$this->median = $sorted_array[ floor( $this->array_length - 1 ) / 2 ];
+
+		} else { //if even we have 2 medians
+
+			$first_median = $sorted_array[ floor( $this->array_length - 1 ) / 2 ];
+
+			$second_median = $sorted_array[ floor( $this->array_length ) / 2 ];
+
+			$this->median = ( $first_median + $second_median ) / 2;
+
+		}
 
 	}
 
