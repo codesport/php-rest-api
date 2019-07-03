@@ -11,6 +11,9 @@
  * Extra verbose commenting for usage in future teaching session. PHP coding standards
  * from @link https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/
  * and @link https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/
+ * 
+ * Class, method, and property naming conventions aligned with WordPress standards via @link
+ * https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#naming-conventions
  *
  *	Usage:
  *		1. Instiate new object while simultaneously intitializing $array_from_client, $submission_type:
@@ -19,9 +22,10 @@
  *		2. Send object to the method (getter function) get_all_statistics() and store output in an array
  *			$server_response['result'] = $statistics_object->get_all_statistics();
  *
+ * TODO: June 16, 2019 - insall composer and PHPUnit to test
  *
  * @package    Fizz Buzz for Company NC001
- * @version    0.0.1 (January 21, 2016)
+ * @version    1.0.0 (June 15, 2019)
  * @since      0.0.1 (January 21, 2016)
  */
 
@@ -30,9 +34,6 @@
  * Statistics Class using built-in PHP array functions
  *
  * Currently contains methods for computing basic stats functions.
- *
- * TODO: Allow statistical methods to be called individually outside 
- * the class.  Give methods parameters variables to accept 'array of numbers'
  *
  * @since 0.0.1 (January 21, 2016)
  */
@@ -47,7 +48,7 @@ class Statistics {
 	 * external class calling or instantiation
 	 * 
 	 */
-	public $array_of_numbers; 	// sent by client
+	public $array_of_numbers; 	// this can be private. user modifying thi adds no value
 	public $submission_type; 	// auto-sent by mmmr.php. Expected values: 'web-client' or 'API'
 	
 	//may optionally declare as 'protected' if we want to support inheritance 
@@ -65,20 +66,30 @@ class Statistics {
 
 		/*
 		* Initialize all private variables through method calls. 
-		* BUT... Is this a best practice?
 		*/
-		$this->set_mean( $this->array_of_numbers );
-		$this->set_mode( $this->array_of_numbers );
-		$this->set_median( $this->array_of_numbers );
-		$this->set_range( $this->array_of_numbers );
+		$this->set_all_statistics( $array_from_client );
+
 	}
+
+	/*
+	* Set all statistics in bulk
+	*/
+	public function set_all_statistics( $array_of_numbers ) {
+
+		$this->set_mean( $array_of_numbers );
+		$this->set_mode( $array_of_numbers );
+		$this->set_median( $array_of_numbers );
+		$this->set_range( $array_of_numbers );
+
+	}
+
 
 	/*
 	* Get all statistics in bulk and return to user as array
 	*/
 	public function get_all_statistics() {
 
-		$statistics_array['Mean'] 	= round ( $this->get_mean(), 2);
+		$statistics_array['Mean'] 	= $this->get_mean();
 		$statistics_array['Mode'] 	= $this->get_mode();
 		$statistics_array['Median']	= $this->get_median();
 		$statistics_array['Range']	= $this->get_range();
@@ -101,7 +112,7 @@ class Statistics {
 	 */
 	public function set_mean( $array_of_numbers ) {
 
-		$this->mean = array_sum( $array_of_numbers ) / count( $array_of_numbers ) ;	
+		$this->mean = round( array_sum( $array_of_numbers ) / count( $array_of_numbers ), 2) ;	
 
 	}
 
@@ -141,12 +152,11 @@ class Statistics {
 
 
 		if ( $max_occurence === 1 ) { //if no mode. Forcing type recognition with ===
+
 			/*
 			* give an null or empty value if no mode exists.
 			*/
-
-			$this->mode = null;
-			//$this->mode = '';
+			$this->mode = null; // or $this->mode = '';
 
 		} else {
 

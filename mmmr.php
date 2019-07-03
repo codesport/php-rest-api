@@ -21,8 +21,8 @@
  * @since      0.0.1 (January 21, 2016)
  */
 
-include 'inc/class-statistics.php';
-include 'inc/functions.php';
+include 'src/class-statistics.php';
+include 'src/functions.php';
 
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
