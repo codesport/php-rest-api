@@ -1,4 +1,4 @@
-[![Build Status]https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates](https://travis-ci.org/codesport/php-rest-api)
+[![Build Status](https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates)](https://travis-ci.org/codesport/php-rest-api)
 
 # 2019 Updates
 
