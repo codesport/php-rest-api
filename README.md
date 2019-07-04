@@ -1,3 +1,31 @@
+[![Build Status]https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates](https://travis-ci.org/codesport/php-rest-api)
+
+# 2019 Updates
+
+1. Updated DocBlock in `class-statistics.php` with instructions on how to use the class
+2. Corrected calculation of the median in `class-statistics.php`
+3. Made computed properties private for encapsulation purposes. Accessing of computed  properties are now only allowed via setter and getter methods
+
+```php
+
+	public $array_of_numbers; 	// this can be private. user modifying thi adds no value
+	public $submission_type; 	// auto-sent by mmmr.php. Expected values: 'web-client' or 'API'
+	//may optionally declare as 'protected' if we want to support inheritance 
+	private $mean; 
+	private $mode;
+	private $median;
+	private $range;
+	private $statistics_array;
+```
+
+4. Installed composer to run unit testing with PHPUnit
+
+5. Moved core PHP files to `src/` and deleted the `inc/` folder
+
+6. Added `.travis.yml` (i.e., travis-ci configuration file) to automate unit testing
+
+
+
 # Authorship and Credits
 This PHP [Rest API](https:/google.com/search?q=Rest)<sup id="reference-1">[1](#footer-1)</sup> along with this `README` file was developed by **Marcus** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
 

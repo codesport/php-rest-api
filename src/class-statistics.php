@@ -16,7 +16,7 @@
  * https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#naming-conventions
  *
  *	Usage:
- *		1. Instiate new object while simultaneously intitializing $array_from_client, $submission_type:
+ *		1. Instantiate new object while simultaneously intitializing $array_from_client, $submission_type:
  *			$statistics_object = new Statistics( $array_of_numbers['numbers'], 'API' );
  *
  *		2. Send object to the method (getter function) get_all_statistics() and store output in an array
@@ -36,7 +36,7 @@
  * Currently contains methods for computing basic stats functions.
  *
  * @since 0.0.1 (January 21, 2016)
- */
+ **/
 class Statistics {
 
 	/*
@@ -58,15 +58,17 @@ class Statistics {
 	private $range;
 	private $statistics_array;	//built by get_all_statistics() method
 
-	//Use constructor for intitializing class globals. '$this' is shorthand for 'apply to any created object' 
+	/*
+	* Using  constructor for intitializing class globals. 
+	* NB: '$this' is shorthand for 'apply to any created object' 
+	* NB: $this' properties are available globally throughout the class.
+	*/
 	function __construct( $array_from_client, $submission_type='web-client' ) {
-	
-		$this->array_of_numbers  = $array_from_client;
-		$this->submission_type   = $submission_type;
 
-		/*
-		* Initialize all private variables through method calls. 
-		*/
+		$this->array_of_numbers  = $array_from_client; //setter
+		$this->submission_type   = $submission_type; //setter
+		
+		//Initialize all private variables through method calls. 
 		$this->set_all_statistics( $array_from_client );
 
 	}
@@ -192,8 +194,15 @@ class Statistics {
 	 * 	3. Assume 0-indexed array structure. Therefore:
 	 *  	a. If array size (n) is odd: Median is at index (n-1)/2 
 	 * 		   NB: subtract 1 to make 0-indexed positioning
-	 *  	b. If array size (n) is even: Two elements in the middle are medians at indexes 
+	 *  	b. If array size (n) is even (ie., n % 2 == 0): Two elements in the middle are medians at indexes 
 	 * 	       floor((n-1)/2) and at n/2
+	 * 
+	 * Tutrials on computing median:
+	 * 
+	 * See section called "Searching for the Median"  @link http://www.drdobbs.com/parallel/finding-the-median-of-two-sorted-arrays/240169222
+	 * Code Examples in popular languages: @link https://www.geeksforgeeks.org/program-for-mean-and-median-of-an-unsorted-array/
+	 * This example will yield incorrect results b/c lack of sort @link https://gist.github.com/ischenkodv/262906
+	 * @link https://www.google.com/search?q=what+is+median+of+an+array
 	 * 
 	 * @param array $array_of_numbers Numbers used to calculate median.
 	 */
@@ -211,7 +220,7 @@ class Statistics {
 
 			$first_median = $array_of_numbers[ floor( $array_length - 1 ) / 2 ];
 
-			$second_median = $array_of_numbers[ floor( $array_length ) / 2 ];
+			$second_median = $array_of_numbers[ ( $array_length ) / 2 ];
 
 			$this->median = ( $first_median + $second_median ) / 2;
 

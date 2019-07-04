@@ -1,8 +1,32 @@
+# Set your language. See http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
 
 # list any PHP version you want to test against
 php:
-  # using major version aliases
-  # aliased to a recent 5.6.x version
   - 5.6
+
+
+# This is important. Test will fail with out this specified  
 script: phpunit tests  
+
+# OPTIONAL FEATURE: Configure Travis CI to only trigger builds when certain conditions are met, such as only building the master branch. 
+# https://docs.travis-ci.com/user/conditional-builds-stages-jobs/#conditional-builds
+
+#if: branch = master  
+
+# OPTIONAL FEATURE: Specify which branches to build using a safelist, or blocklist branches that you do not want to be built:
+# http://docs.travis-ci.com/user/build-configuration/#Specify-branches-to-build
+
+# blacklist
+#branches:
+#  except:
+#    - legacy
+#    - experimental
+
+# whitelist
+#branches:
+#  only:
+#    - master
+#    - stable
+
+
