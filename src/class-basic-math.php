@@ -13,7 +13,7 @@
  *
  * @since 0.0.1 (July 4, 2019)
  **/
-require_once '/src/class-statistics.php';
+require_once 'class-statistics.php';
 
 class BasicMath extends Statistics {
 
