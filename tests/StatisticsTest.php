@@ -45,7 +45,7 @@ final class StasticsTest extends TestCase {
         $input = [5, 6, 8, 7, 5];
         $test_statistics = new Statistics ( $input );
 
-        //Act: Call a method of the newly instiated object and store output in '$result'
+        //Act: Set then Get. of the newly instiated object and store output in '$result'
         $result = $test_statistics->get_all_statistics();
 
         //Assert: compare desired result with actual result
@@ -70,7 +70,7 @@ Non-static method Statistics::get_mode() should not be called statically, assumi
         $input = [ 1, 3, 4, 2, 7, 5, 8, 6 ];
         $test_statistics = new Statistics ( $input );
 
-        //Act: Call a method of the newly instiated object and store output in '$result'
+        //Act: Set then Get. of the newly instiated object and store output in '$result'
         $result = $test_statistics->get_median();
 
         //Assert: compare desired result with actual result
@@ -88,18 +88,33 @@ final class BasicMathTest extends TestCase {
         $input = [5, 6, 8, 7, 5];
         $test_basic_math = new BasicMath( $input );
 
-        //Act: Call a method of the newly instiated object and store output in '$result'
+        //Act: Set then Get. of the newly instiated object and store output in '$result'
+        $test_basic_math->set_product( $input );
         $result = $test_basic_math->get_product();
 
         //Assert: compare desired result with actual result
         $this->assertEquals( 8400, $result) ;
-    }  
+    } 
+    
+    public function test_get_sum() {
+
+        //Arrange: (1) assign property values to variable, (2) create instance of class 
+        $input = [5, 6, 8, 7, 5];
+        $test_basic_math = new BasicMath( $input );
+
+        //Act: Set then Get.  Call a method of the newly instiated object and store output in '$result'
+        $test_basic_math->set_sum( $input );
+        $result = $test_basic_math->get_sum();
+
+        //Assert: compare desired result with actual result
+        $this->assertEquals( 31, $result) ;
+    }      
 
 }
 
 final class ThrowExecptionsTest extends TestCase {
 
-    public function test_can_i_be_instantiated() {
+    public function test_can_be_instantiated() {
 
         //$input = [5, 6, 8, 7, 5];
         $input = '5';
@@ -143,7 +158,11 @@ final class ThrowExecptionsTest extends TestCase {
         //call php super close
         $this->expectException(InvalidArgumentException::class); //;
 
-        //test code that actually throws literally throws a 'InvalidArgumentException' exception
+        /*
+        *test code that literally throws a 'InvalidArgumentException' exception. For example:
+        *
+        *   throw new InvalidArgumentException( $input . ' is not a valid JSON string.' );
+        */
         ThrowExceptions::throw_invalid_argument( $input );
     
     }    
