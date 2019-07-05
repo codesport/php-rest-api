@@ -2,9 +2,9 @@
 
 # 2019 Updates
 
-1. Updated DocBlock in `class-statistics.php` with instructions on how to use the class
-2. Corrected calculation of the median in `class-statistics.php`
-3. Made computed properties private for encapsulation purposes. Accessing of computed  properties are now only allowed via setter and getter methods
+1. Updated DocBlock in [`class-statistics.php`] with instructions on how to use the class
+2. Corrected [calculation of the median](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php#L190) in `class-statistics.php`
+3. Made [computed properties private](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php#L46) for encapsulation purposes. Accessing of computed  properties are now only allowed via setter and getter methods. To illustrate:
 
 ```php
 
@@ -20,9 +20,9 @@
 
 4. Installed composer to run unit testing with PHPUnit
 
-5. Moved core PHP files to `src/` and deleted the `inc/` folder
+5. Moved core PHP files to [`src/`] and deleted the [`inc/] folder
 
-6. Added `.travis.yml` (i.e., travis-ci configuration file) to automate unit testing
+6. Added [`.travis.yml`] (i.e., travis-ci configuration file) to automate unit testing
 
 
 
