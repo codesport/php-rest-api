@@ -119,6 +119,8 @@ final class ThrowExecptionsTest extends TestCase {
         //$input = [5, 6, 8, 7, 5];
         $input = '5';
         /*
+        * Pretty useless.
+        * 
         * assertInstanceOf($expected, $actual)
         *
         * gives error if $actual != $expected in this case just test if a class can be 
@@ -159,7 +161,9 @@ final class ThrowExecptionsTest extends TestCase {
         $this->expectException(InvalidArgumentException::class); //;
 
         /*
-        *test code that literally throws a 'InvalidArgumentException' exception. For example:
+        * Pretty useless.
+        *
+        * test code that literally throws a 'InvalidArgumentException' exception. For example:
         *
         *   throw new InvalidArgumentException( $input . ' is not a valid JSON string.' );
         */

@@ -16,6 +16,7 @@ script: phpunit tests
 
 # OPTIONAL FEATURE: Specify which branches to build using a safelist, or blocklist branches that you do not want to be built:
 # http://docs.travis-ci.com/user/build-configuration/#Specify-branches-to-build
+# https://stackoverflow.com/a/29507499/946957
 
 # blacklist
 #branches:
