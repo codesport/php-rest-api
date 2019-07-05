@@ -2,9 +2,9 @@
 
 # 2019 Updates
 
-**1.** Updated DocBlock in [`class-statistics.php`](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php) with instructions on how to use the class
-**2.** Corrected [calculation of the median](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php#L190) in  [`class-statistics.php`](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php)
-**3.** Made [computed properties private](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php#L46) for encapsulation purposes. Accessing of computed  properties are now only allowed via setter and getter methods. To illustrate:
+1. Updated DocBlock in [`class-statistics.php`](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php) with instructions on how to use the class
+2. Corrected [calculation of the median](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php#L190) in  [`class-statistics.php`](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php)
+3. Made [computed properties private](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php#L46) for encapsulation purposes. Accessing of computed  properties are now only allowed via setter and getter methods. To illustrate:
 
 ```php
 
