@@ -22,8 +22,6 @@
  *		2. Send object to the method (getter function) get_all_statistics() and store output in an array
  *			$server_response['result'] = $statistics_object->get_all_statistics();
  *
- * TODO: June 16, 2019 - insall composer and PHPUnit to test
- *
  * @package    Fizz Buzz for Company NC001
  * @version    1.0.0 (June 15, 2019)
  * @since      0.0.1 (January 21, 2016)
