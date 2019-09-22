@@ -2,9 +2,11 @@
 
 # 2019 Updates
 
-1. Updated DocBlock in [`class-statistics.php`](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php) with instructions on how to use the class
-2. Corrected [calculation of the median](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php#L190) in  [`class-statistics.php`](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php)
-3. Made [computed properties private](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php#L46) for encapsulation purposes. Accessing of computed  properties are now only allowed via setter and getter methods. To illustrate:
+1. Updated DocBlock in [`class-statistics.php`](/src/class-statistics.php) with instructions on how to use the class
+
+2. Corrected [calculation of the median](src/class-statistics.php#L195) in  [`class-statistics.php`](src/class-statistics.php#L195)
+
+3. ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L46) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
 
 ```php
 
@@ -18,12 +20,25 @@
 	private $statistics_array;
 ```
 
-4. Installed composer to run unit testing with PHPUnit
+4. ***Best Practice:*** Installed composer and created a `tests/` folder for automated unit testing with PHPUnit. See the doc bloc in [`StatisticsTest.php`](tests/StatisticsTest.php) to learn how to deploy PHPUnit on your development box
 
-5. Moved core PHP files to `src/` and deleted the `inc/` folder
+5. Moved core PHP files to `src/` and deleted the `inc/` folder 
 
-6. Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., travis-ci configuration file) to automate unit testing
+6. ***Best Practice:*** Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., travis-ci configuration file) to automate unit testing
 
+7. Added the Better Code Hub configuration file ([`.bettercodehub.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.bettercodehub.yml/)) to exclude the tests/ folder from automated code quality review.
+
+##Continuous Integration (CI)
+
+Some of the most interesting updates is the use of autmated testing and continous integration. Here are the key terms
+
+<dl>
+  <dt>Continuous Integration (CI):</dt> <dd>a software development workflow which automates build creation and code testing.</dd> 
+
+ <dt>Travis CI:</dt> <dd> at the most basic level, it tests your under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
+
+<dt>Better Code Hub:</dt> <dd>a CI tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group..</dd>
+</dl>
 
 
 # Authorship and Credits
