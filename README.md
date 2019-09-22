@@ -26,7 +26,7 @@
 
 6. ***Best Practice:*** Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., travis-ci configuration file) to automate unit testing
 
-7. ~~Added the Better Code Hub [configuration](https://bettercodehub.com/docs/configuration-manual#excludingfilesanddirectoriesfromanalysis) file ([`.bettercodehub.yml`](.bettercodehub.yml/)) to exclude the tests/ folder from automated code quality review.~~
+7. Added the Better Code Hub [configuration](https://bettercodehub.com/docs/configuration-manual#excludingfilesanddirectoriesfromanalysis) file ([`.bettercodehub.yml`](.bettercodehub.yml/)) to exclude the tests/ folder from automated code quality review.
 
 ##Continuous Integration (CI)
 
