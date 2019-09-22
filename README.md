@@ -6,7 +6,7 @@
 
 2. Corrected [calculation of the median](src/class-statistics.php#L195) in  [`class-statistics.php`](src/class-statistics.php#L195)
 
-3. ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L46) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
+3. ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L44) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
 
 ```php
 
@@ -20,7 +20,7 @@
 	private $statistics_array;
 ```
 
-4. ***Best Practice:*** Installed composer and created a `tests/` folder for automated unit testing with PHPUnit. See the doc bloc in [`StatisticsTest.php`](tests/StatisticsTest.php) to learn how to deploy PHPUnit on your development box
+4. ***Best Practice:*** Installed composer and created a `tests/` folder for automated unit testing with PHPUnit. See the DocBlock in [`StatisticsTest.php`](tests/StatisticsTest.php) to learn how to deploy PHPUnit on your development box
 
 5. Moved core PHP files to `src/` and deleted the `inc/` folder 
 
@@ -28,7 +28,7 @@
 
 ## Continuous Integration (CI)
 
-Some of the most interesting updates is the use of autmated testing and continous integration. Here are the key terms
+Some of the most interesting updates is the use of automated testing and continous integration. Here are the tools:
 
 <dl>
   <dt>Continuous Integration (CI):</dt> <dd>a software development workflow which automates build creation and code testing.</dd> 
