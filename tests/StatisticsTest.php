@@ -24,7 +24,12 @@
 *
 * @link https://phpunit.de/getting-started/phpunit-5.html
 * @link https://www.learnhowtoprogram.com/php/behavior-driven-development-with-php/introduction-to-phpunit
+*
+*  The below links have power tips for optimizing Travis with PHP unit testing
+*
 * @link https://www.cloudways.com/blog/getting-started-with-unit-testing-php/
+* @link https://www.tomasvotruba.cz/blog/2018/10/29/7-tips-to-get-the-most-out-of-travis-ci/
+* @link https://www.sitepoint.com/php-continuous-integration-travis-ci/
 */
 
 require_once "src/class-statistics.php";

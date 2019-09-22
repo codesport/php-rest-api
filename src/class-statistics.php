@@ -204,10 +204,10 @@ class Statistics {
 	 * 
 	 * Tutrials on computing median:
 	 * 
-	 * See section called "Searching for the Median"  @link http://www.drdobbs.com/parallel/finding-the-median-of-two-sorted-arrays/240169222
+	 * See section called "Searching for the Median":  @link http://www.drdobbs.com/parallel/finding-the-median-of-two-sorted-arrays/240169222
 	 * Code Examples in popular languages: @link https://www.geeksforgeeks.org/program-for-mean-and-median-of-an-unsorted-array/
-	 * This example will yield incorrect results b/c lack of sort @link https://gist.github.com/ischenkodv/262906
-	 * @link https://www.google.com/search?q=what+is+median+of+an+array
+	 * This example will yield incorrect results b/c lack of sort: @link https://gist.github.com/ischenkodv/262906
+	 * Google Search Results: @link https://www.google.com/search?q=what+is+median+of+an+array
 	 * 
 	 * @param array $array_of_numbers Numbers used to calculate median.
 	 */
