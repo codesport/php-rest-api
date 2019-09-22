@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates)](https://travis-ci.org/codesport/php-rest-api)
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/codesport/php-rest-api?branch=php-class-updates)](https://bettercodehub.com/)
+
 # 2019 Updates
 
 1. Updated DocBlock in [`class-statistics.php`](https://github.com/codesport/php-rest-api/blob/php-class-updates/src/class-statistics.php) with instructions on how to use the class
