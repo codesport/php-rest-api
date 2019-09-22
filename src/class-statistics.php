@@ -41,13 +41,20 @@ class Statistics {
 	 * First Declare any and all member variables (properties/class globals)
 	 * used within the class. Set default values if needed
 	 * 
-	 * All class globals should probably be made either private or protected
-	 * since they will only be modified and set from within the class, and not from 
-	 * external class calling or instantiation
+	 * Second, all class globals should be made either private or protected
+	 * so they can only be modified (set) or accessed (get) from within the class.
+	 * 
+	 * Third, if external access is needed, use publicly accessible setter and 
+	 * getter methods to modify and access, respectively
+	 * 
+	 * Class properties declared public can be accessed everywhere.  Properties declared as
+	 * private may only be accessed by the class that defines the member. Properties declared
+	 * protected can be accessed only within the class itself and by inherited and parent
+	 * classes. @link https://www.php.net/manual/en/language.oop5.visibility.php
 	 * 
 	 */
-	public $array_of_numbers; 	// this can be private. user modifying thi adds no value
-	public $submission_type; 	// auto-sent by mmmr.php. Expected values: 'web-client' or 'API'
+	public $array_of_numbers; 	// this should be be private. user modifying thi adds no value
+	public $submission_type; 	// this should be be private. It is auto-sent by mmmr.php. Expected values: 'web-client' or 'API'
 	
 	//may optionally declare as 'protected' if we want to support inheritance 
 	private $mean; 
