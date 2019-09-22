@@ -28,15 +28,13 @@
 
 ## Continuous Integration Tools
 
-Some of the most interesting updates are the use of continous integration tools. Here are they are:
+Some of the most interesting updates are the use of Continous Integration (CI) tools. CI is a software development workflow process which automates build creation and code testing. These are the CI tools used in this project:
 
-* **Continuous Integration (CI):** a software development workflow which automates build creation and code testing. 
+* **[PHPUnit](https://phpunit.de/getting-started/phpunit-5.html):** testing of object oriented PHP code.  All method tests and expected results are manual specified in a test file ending in `Test.php` 
 
-* **PHPUnit:** testing of object oriented PHP code.  All method tests and expected results are manual specified in a test file ending in `Test.php` 
+* **[Travis CI](https://travis-ci.org/codesport/php-rest-api):** at the most basic level, it tests your under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
 
-* **Travis CI:** at the most basic level, it tests your under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
-
-* **Better Code Hub:** a CI tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group.
+* **[Better Code Hub](https://bettercodehub.com/):** a CI tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group.
 
 
 # Authorship and Credits
