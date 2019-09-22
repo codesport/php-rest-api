@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates)](https://travis-ci.org/codesport/php-rest-api)
-
-[![BCH compliance](https://bettercodehub.com/edge/badge/codesport/php-rest-api?branch=php-class-updates)](https://bettercodehub.com/)
+[![Build Status](https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates)](https://travis-ci.org/codesport/php-rest-api) [![BCH compliance](https://bettercodehub.com/edge/badge/codesport/php-rest-api?branch=php-class-updates)](https://bettercodehub.com/)
 
 # 2019 Updates
 
