@@ -26,17 +26,17 @@
 
 6. ***Best Practice:*** Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., travis-ci configuration file) to automate unit testing
 
-## Continuous Integration (CI)
+## Continuous Integration Tools
 
 Some of the most interesting updates are the use of continous integration tools. Here are they are:
 
-   **Continuous Integration (CI):** a software development workflow which automates build creation and code testing. 
+* **Continuous Integration (CI):** a software development workflow which automates build creation and code testing. 
 
-   **PHPUnit:** testing of object oriented PHP code.  All method tests and expected results are manual specified in a test file ending in `Test.php` 
+* **PHPUnit:** testing of object oriented PHP code.  All method tests and expected results are manual specified in a test file ending in `Test.php` 
 
-   **Travis CI:** at the most basic level, it tests your under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
+* **Travis CI:** at the most basic level, it tests your under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
 
-    **Better Code Hub:** a CI tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group.
+* **Better Code Hub:** a CI tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group.
 
 
 # Authorship and Credits
