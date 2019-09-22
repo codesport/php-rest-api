@@ -28,7 +28,7 @@
 
 7. Added the Better Code Hub [configuration](https://bettercodehub.com/docs/configuration-manual#excludingfilesanddirectoriesfromanalysis) file ([`.bettercodehub.yml`](.bettercodehub.yml/)) to exclude the tests/ folder from automated code quality review.
 
-##Continuous Integration (CI)
+## Continuous Integration (CI)
 
 Some of the most interesting updates is the use of autmated testing and continous integration. Here are the key terms
 
