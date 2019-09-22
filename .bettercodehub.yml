@@ -1,3 +1,5 @@
-exclude:
-- /tests/.*
-- .*/FileYouWantToExclude\.php
+#see https://bettercodehub.com/docs/configuration-manual#excludingfilesanddirectoriesfromanalysis and https://bettercodehub.com/docs/configuration-manual#customizingfilefiltering
+
+#exclude:
+#- /tests/.*
+#- .*/FileYouWantToExclude\.php
