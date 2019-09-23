@@ -1,7 +1,9 @@
 <?php
 
 /**
- * API which accepts POST requests that are JSON objects or Comma delimited strings
+ * This is the API endpoint (controller) for computing mean, mode, median, range (mmmr).
+ * 
+ * API which accepts POST requests that are JSON objects or comma delimited strings
  *
  * Core Function: Accepts single JSON object with 'numbers' attribute. Then,
  *  1. Converts JSON object to PHP array 
@@ -27,9 +29,7 @@ include 'src/functions.php';
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
-
-	if ( isset( $_POST['string'] ) ) {
-
+	if ( isset( $_POST['string'] ) ) { //captured via form <input name ="string"
 
 	//use of 'htmlspecialchars' is an OCD habit to minimally sanitize html form submission. 
 	$clean_numbers = trim( str_replace( ',', '', htmlspecialchars( $_POST['string'] ) ) ); 
@@ -49,8 +49,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	echo json_encode( $server_response );
 
 
-	} elseif (isset( $_POST['json'] ) ) {
-
+	} elseif (isset( $_POST['json'] ) ) { //captured via form <input name ="json"
 
 		if ( is_JSON( $_POST['json'] ) ) {
 
@@ -77,13 +76,35 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		}
 
-
 	} else { //API on!
 
+		/*
+		 * Some options for making a curl request from the command line
+		 * 
+		 * 		Verbose: curl --data '{"numbers":[ 5, 6, 8, 7, 5 ]}' --verbose --header "Content-Type: application/json" http://phonegrid.net/numbers/mmmr 
+		 * 		Middle:  curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' -H "Content-Type: application/json" http://phonegrid.net/numbers/mmmr 
+		 * 		Minimal: curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' http://phonegrid.net/numbers/mmmr
+		 * 
+		 * Send json file to endpoint while stripping file's newlines:
+		 * 
+		 * 		Minimal: curl -d @path/to/file/filename http://phonegrid.net/numbers/mmmr
+		 * 
+		 * to beautify JSON output, pipe output to:
+		 * 		| python -m json.tool    Hat tip @link https://stackoverflow.com/a/14978657/946957
+		 * 
+		 * cURL options/switches list: 'curl --help' or 'curl -h' 
+		 * cURL official handbook @link https://ec.haxx.se/
+		 */
 
-		$data_stream = file_get_contents('php://input'); //capture incoming data stream
-
-		if ( is_JSON( $data_stream ) ) {
+		 $data_stream = file_get_contents('php://input'); //capture incoming data stream
+		
+		/*
+		* Can we further filter by specifying 'Content-Type: application/json' 
+		* via $_SERVER["CONTENT_TYPE"] == "application/json" ?
+		* 
+		* Seems awfully messy @ link https://stackoverflow.com/a/31322213/946957
+		*/ 		
+		if ( is_JSON( $data_stream ) ) { 
 
 			$array_of_numbers = json_decode( $data_stream, true ); 
 
@@ -94,7 +115,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			echo json_encode( $server_response );
 
 		} else {
-
 
 			generate_500_error();
 
