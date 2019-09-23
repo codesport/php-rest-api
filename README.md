@@ -26,6 +26,28 @@
 
 6. ***Best Practice:*** Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., travis-ci configuration file) to automate unit testing
 
+7. Added info on using endpoint with curl in [`mmmr.php`](mmmr.php#L82):
+
+```php
+/**
+* Some options for making a curl request from the command line
+* 
+* 	Verbose: curl --data '{"numbers":[ 5, 6, 8, 7, 5 ]}' --verbose --header "Content-Type: application/json" http://phonegrid.net/numbers/mmmr 
+* 	Middle:  curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' -H "Content-Type: application/json" http://phonegrid.net/numbers/mmmr 
+* 	Minimal: curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' http://phonegrid.net/numbers/mmmr
+* 
+* Send json file to endpoint while stripping file's newlines:
+* 
+* 	Minimal: curl -d @path/to/file/filename http://phonegrid.net/numbers/mmmr
+* 
+* To beautify JSON output, pipe output to:
+* 		| python -m json.tool   
+* 
+* curl options/switches list: 'curl --help' or 'curl -h' 
+* curl official handbook @link https://ec.haxx.se/
+*/
+```
+
 ## Continuous Integration Tools
 
 Some of the most interesting updates are the use of Continous Integration (CI) tools. CI is a software development workflow process which automates build creation and code testing. These are the CI tools used in this project:
@@ -34,7 +56,7 @@ Some of the most interesting updates are the use of Continous Integration (CI) t
 
 * **[Travis CI](https://travis-ci.org/codesport/php-rest-api):** at the most basic level, it tests your under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
 
-* **[Better Code Hub](https://bettercodehub.com/):** a CI tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group.
+* **[Better Code Hub](https://bettercodehub.com/):** a code review tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group.
 
 
 # Authorship and Credits
@@ -48,7 +70,7 @@ Demonstrates understanding of Object Oriented PHP and structured application dev
 
 ### 1. The Class Library File for Statistical Methods
  
-**inc/class-statistics.php** This is the *Phase 1* request and contains a single class called Statistics. It serves as an Obect Oriented Programming (OOP) demonstration using built-in PHP array functions. Extra verbose commenting is used as this excercise will be used in future teaching session. 
+**src/class-statistics.php** This is the *Phase 1* request and contains a single class called Statistics. It serves as an Obect Oriented Programming (OOP) demonstration using built-in PHP array functions. Extra verbose commenting is used as this excercise will be used in future teaching session. 
 
 ### 2. Endpoint File (Pseudo-Controller)
 
