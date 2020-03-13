@@ -7,3 +7,7 @@ json-api-tester.php
 private-notes.txt
 ignore_me/
 vendor/
+close-io.php
+inc/
+src/class-options-chain.php
+test.php
