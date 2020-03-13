@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates)](https://travis-ci.org/codesport/php-rest-api) [![BCH compliance](https://bettercodehub.com/edge/badge/codesport/php-rest-api?branch=php-class-updates)](https://bettercodehub.com/)
 
-# 2019 Updates
+# PHP REST API: 2019 Updates
 
 **1.** Updated DocBlock in [`class-statistics.php`](/src/class-statistics.php) with instructions on how to use the class
 
@@ -21,11 +21,11 @@
 	private $range;
 	private $statistics_array;
 ```
-**5.** Unit testing and continuous integration:
+**5.** Implemented unit testing and continuous integration into project workflow:
 
    * Installed [composer](https://getcomposer.org/download/) and created a `tests/` folder for automated unit testing with PHPUnit. See the DocBlock in [`StatisticsTest.php`](tests/StatisticsTest.php) to learn how to deploy PHPUnit on your development box
 
-   * Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., travis-ci configuration file) to automate unit testing
+   * Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., the travis-ci configuration file) to automate unit testing
 
 
 ## Overview of Continuous Integration Tools Used
