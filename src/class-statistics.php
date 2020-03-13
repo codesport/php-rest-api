@@ -8,7 +8,7 @@
  * In PHP we typically use explicit getter and setter methods. "Getters" gather and package
  * the information computed by "setter" methods.
  *
- * Extra verbose commenting for usage in future teaching session. PHP coding standards
+ * Extra verbose commenting for usage in future teaching session. Using Wordpress PHP coding standards
  * from @link https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/
  * and @link https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/
  * 
@@ -21,6 +21,8 @@
  *
  *		2. Send object to the method (getter function) get_all_statistics() and store output in an array
  *			$server_response['result'] = $statistics_object->get_all_statistics();
+ *
+ * TODO: Class auto loading via @link https://www.php.net/autoload
  *
  * @package    Fizz Buzz for Company NC001
  * @version    1.0.0 (June 15, 2019)

@@ -9,6 +9,14 @@
  */
 
 
+/**
+ * TODO: Called by mmmr.php
+ * 	1> Consolidate with a single error handler with custom messages and codes
+ *  2> No need to echo output, header is sufficient
+ *  3> Include and 'exit' to force script to stop
+ * 
+ */
+
 function generate_500_error() {
 
     header( $_SERVER["SERVER_PROTOCOL"] . ' 500 Malformed JSON string. Transaction aborted' );
