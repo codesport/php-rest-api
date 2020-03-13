@@ -1,14 +1,18 @@
 [![Build Status](https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates)](https://travis-ci.org/codesport/php-rest-api) [![BCH compliance](https://bettercodehub.com/edge/badge/codesport/php-rest-api?branch=php-class-updates)](https://bettercodehub.com/)
 
 # PHP REST API: 2019 Updates
+ 
+This repo regulary updated and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
-**1.** Updated DocBlock in [`class-statistics.php`](/src/class-statistics.php) with instructions on how to use the class
+**1.** Exposed live endpoint file to the public. You may access it via `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' http://phonegrid.net/numbers/mmmr`
 
-**2.** Corrected [calculation of the median](src/class-statistics.php#L195) in  [`class-statistics.php`](src/class-statistics.php#L195)
+**2.** Updated DocBlock in [`class-statistics.php`](/src/class-statistics.php) with instructions on how to use the class
 
-**3.** Moved core PHP files to `src/` and deleted the `inc/` folder 
+**3.** Corrected [calculation of the median](src/class-statistics.php#L195) in  [`class-statistics.php`](src/class-statistics.php#L195)
 
-**4.** ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L44) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
+**4.** Moved core PHP files to `src/` and deleted the `inc/` folder 
+
+**5.** ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L44) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
 
 ```php
 
@@ -21,7 +25,7 @@
 	private $range;
 	private $statistics_array;
 ```
-**5.** Implemented unit testing and continuous integration into project workflow:
+**6.** Implemented unit testing and continuous integration into project workflow:
 
    * Installed [composer](https://getcomposer.org/download/) and created a `tests/` folder for automated unit testing with PHPUnit. See the DocBlock in [`StatisticsTest.php`](tests/StatisticsTest.php) to learn how to deploy PHPUnit on your development box
 
@@ -43,9 +47,11 @@ Some of the most interesting updates are the use of Continous Integration (CI) t
 
 
 # Authorship and Credits
-This PHP [Rest API](https:/google.com/search?q=Rest)<sup id="reference-1">[1](#footer-1)</sup> along with this `README` file was developed by **Marcus** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
+This PHP [Rest API](https:/google.com/search?q=Rest)<sup id="reference-1">[1](#footer-1)</sup> along with this `README` file was developed by **Marcus B.** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
 
 The rewrite-rules were found back in 2013 from an unknown website, and have been reposted below in Part 3, Rewrite Rules.
+
+This repo is available on [Github](https://github.com/codesport/php-rest-api) and [Bitbucket](https://bitbucket.org/codesport/php-rest-api/)
 
 # PHP Application Development Excercise Overview
 
