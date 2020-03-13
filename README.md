@@ -1,10 +1,16 @@
 [![Build Status](https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates)](https://travis-ci.org/codesport/php-rest-api) [![BCH compliance](https://bettercodehub.com/edge/badge/codesport/php-rest-api?branch=php-class-updates)](https://bettercodehub.com/)
 
-# PHP REST API: 2019 Updates
+# PHP REST API: Quick Start Guide and Live Demo
+
+This script is an REST API that computes the mean, mode, median, and range of any set of numbers. 
+
+You may test the public-facing web interface [here](https://phonegrid.net/numbers/mmmr).  You may also access the API endpoint from your terminal or app via `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`.   
  
 This repo regulary updated and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
-**1.** Exposed live endpoint file to the public. You may access it via `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' http://phonegrid.net/numbers/mmmr`
+# 2019 and 2020 Updates
+
+**1.** Exposed user interface and live endpoint file to the public. Also installed an SSL certificate on the server using [LetsEncrypt](https://codesport.io/lamp-stack-advanced/lets-encrypt-tutorial/)
 
 **2.** Updated DocBlock in [`class-statistics.php`](/src/class-statistics.php) with instructions on how to use the class
 
@@ -41,8 +47,6 @@ Some of the most interesting updates are the use of Continous Integration (CI) t
 * **[Travis CI](https://travis-ci.org/codesport/php-rest-api):** at the most basic level, it tests your under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
 
 * **[Better Code Hub](https://bettercodehub.com/):** a code review tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group.
-
-
 
 
 
