@@ -4,7 +4,10 @@
 
 This script is an REST API that computes the mean, mode, median, and range of any set of numbers. 
 
-You may test the public-facing web interface [here](https://phonegrid.net/numbers).  You may also access the API endpoint from your terminal or app via `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`.   
+You may test the public-facing web interface [here](https://phonegrid.net/numbers).  You may also access the API endpoint from your terminal or app via:
+
+* Raw Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`
+* Beautified JSON Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`   
  
 This repo regulary updated and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
@@ -16,7 +19,7 @@ This repo regulary updated and is available on [Github](https://github.com/codes
 
 **3.** Corrected [calculation of the median](src/class-statistics.php#L195) in  [`class-statistics.php`](src/class-statistics.php#L195)
 
-**4.** Moved core PHP files to `src/` and deleted the `inc/` folder 
+**4.** ***Best Practice:** Moved core PHP files to `src/` and deleted the `inc/` folder 
 
 **5.** ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L44) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
 
