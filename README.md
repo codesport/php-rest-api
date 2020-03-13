@@ -6,7 +6,9 @@
 
 2. Corrected [calculation of the median](src/class-statistics.php#L195) in  [`class-statistics.php`](src/class-statistics.php#L195)
 
-3. ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L44) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
+3. Moved core PHP files to `src/` and deleted the `inc/` folder 
+
+4. ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L44) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
 
 ```php
 
@@ -19,15 +21,14 @@
 	private $range;
 	private $statistics_array;
 ```
+5. Unit testing and continuous integration:
 
-4. ***Best Practice:*** Installed composer and created a `tests/` folder for automated unit testing with PHPUnit. See the DocBlock in [`StatisticsTest.php`](tests/StatisticsTest.php) to learn how to deploy PHPUnit on your development box
+ i. Installed composer and created a `tests/` folder for automated unit testing with PHPUnit. See the DocBlock in [`StatisticsTest.php`](tests/StatisticsTest.php) to learn how to deploy PHPUnit on your development box
 
-5. Moved core PHP files to `src/` and deleted the `inc/` folder 
-
-6. ***Best Practice:*** Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., travis-ci configuration file) to automate unit testing
+ ii. Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., travis-ci configuration file) to automate unit testing
 
 
-## Continuous Integration Tools
+## Overview of Continuous Integration Tools Used
 
 Some of the most interesting updates are the use of Continous Integration (CI) tools. CI is a software development workflow process which automates build creation and code testing. These are the CI tools used in this project:
 
