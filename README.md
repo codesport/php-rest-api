@@ -4,7 +4,7 @@
 
 This script is an REST API that computes the mean, mode, median, and range of any set of numbers. 
 
-You may test the public-facing web interface [here](https://phonegrid.net/numbers/mmmr).  You may also access the API endpoint from your terminal or app via `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`.   
+You may test the public-facing web interface [here](https://phonegrid.net/numbers).  You may also access the API endpoint from your terminal or app via `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`.   
  
 This repo regulary updated and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
