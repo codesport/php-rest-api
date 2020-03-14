@@ -18,7 +18,7 @@ You may test the public-facing web interface [here](https://phonegrid.net/number
 * Raw Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`
 * Beautified JSON Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`   
  
-This repo regulary maintained and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
+This repo is regulary maintained and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
 # Change Log: Updates for 2019 and 2020
 
