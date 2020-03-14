@@ -13,10 +13,12 @@
 
 This project is an REST API written in PHP.  It computes the Mean, Mode, Median, and Range (MMMR) of any set of numbers. 
 
-You may test the public-facing web interface [here](https://phonegrid.net/numbers).  You may also access the API endpoint from your terminal or app via:
+You may test the public-facing web interface [here](https://phonegrid.net/numbers).  You may access the API endpoint from your terminal or app via:
 
 * Raw Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`
-* Beautified JSON Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`   
+* Beautified JSON Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`
+
+The numbers to be analyzed should be separated by commas as shown above.
  
 This repo is regulary maintained and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
