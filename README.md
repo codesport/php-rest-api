@@ -22,7 +22,7 @@ This repo is regulary maintained and is available on [Github](https://github.com
 
 # Change Log: Updates for 2019 and 2020
 
-**1.** Exposed user interface and live endpoint file to the public. Also installed an SSL certificate on the server using [LetsEncrypt](https://codesport.io/lamp-stack-advanced/lets-encrypt-tutorial/)
+**1.** Exposed user interface and API endpoint to the public. Also installed an SSL certificate on public server using [LetsEncrypt](https://codesport.io/lamp-stack-advanced/lets-encrypt-tutorial/)
 
 **2.** Updated DocBlock in [`class-statistics.php`](/src/class-statistics.php) with instructions on how to use the class
 
