@@ -1,17 +1,26 @@
 [![Build Status](https://travis-ci.org/codesport/php-rest-api.svg?branch=php-class-updates)](https://travis-ci.org/codesport/php-rest-api) [![BCH compliance](https://bettercodehub.com/edge/badge/codesport/php-rest-api?branch=php-class-updates)](https://bettercodehub.com/)
 
-# PHP REST API: Quick Start Guide and Live Demo
 
-This script is an REST API that computes the mean, mode, median, and range of any set of numbers. 
+# Navigation
+
+* [Quick Start Guide](#php-rest-api-quick-start-guide-and-demo)
+* [Change Log](#change-log-updates-for-2019-and-2020)
+* [Authorship and Credits](#authorship-and-credits)
+* [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
+* [Task Description](#php-application-development-excercise-task-description)
+
+# Quick Start Guide and Live Demo
+
+This project is an REST API written in PHP.  It computes the Mean, Mode, Median, and Range (MMMR) of any set of numbers. 
 
 You may test the public-facing web interface [here](https://phonegrid.net/numbers).  You may also access the API endpoint from your terminal or app via:
 
 * Raw Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`
 * Beautified JSON Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`   
  
-This repo regulary updated and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
+This repo regulary maintained and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
-# 2019 and 2020 Updates
+# Change Log: Updates for 2019 and 2020
 
 **1.** Exposed user interface and live endpoint file to the public. Also installed an SSL certificate on the server using [LetsEncrypt](https://codesport.io/lamp-stack-advanced/lets-encrypt-tutorial/)
 
@@ -19,7 +28,7 @@ This repo regulary updated and is available on [Github](https://github.com/codes
 
 **3.** Corrected [calculation of the median](src/class-statistics.php#L195) in  [`class-statistics.php`](src/class-statistics.php#L195)
 
-**4.** ***Best Practice:** Moved core PHP files to `src/` and deleted the `inc/` folder 
+**4.** ***Best Practice:*** Moved PHP class files to `src/` and deleted the `inc/` folder 
 
 **5.** ***Best Practice:*** Made [computed properties private](src/class-statistics.php#L44) for encapsulation purposes. Accessing of computed properties are now only allowed via setter and getter methods. To illustrate:
 
@@ -59,6 +68,8 @@ This PHP [Rest API](https:/google.com/search?q=Rest)<sup id="reference-1">[1](#f
 The rewrite-rules were found back in 2013 from an unknown website, and have been reposted below in Part 3, Rewrite Rules.
 
 This repo is available on [Github](https://github.com/codesport/php-rest-api) and [Bitbucket](https://bitbucket.org/codesport/php-rest-api/)
+
+
 
 # PHP Application Development Excercise Overview
 
