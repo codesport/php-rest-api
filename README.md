@@ -34,9 +34,12 @@ This repo regulary maintained and is available on [Github](https://github.com/co
 
 ```php
 
-	public $array_of_numbers; 	// this can be private. user modifying thi adds no value
-	public $submission_type; 	// auto-sent by mmmr.php. Expected values: 'web-client' or 'API'
-	//may optionally declare as 'protected' if we want to support inheritance 
+	public $array_of_numbers; // this can be private. user modifying this adds no value
+	public $submission_type;  // auto-sent by mmmr.php. Expected values: 'web-client' or 'API'
+	/* 
+	* The below properties may also be declared as 'protected' 
+	* to support inheritance (and manipulation) by child classes 
+	*/
 	private $mean; 
 	private $mode;
 	private $median;
