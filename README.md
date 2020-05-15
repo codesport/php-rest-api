@@ -11,18 +11,18 @@
 
 # Quick Start Guide and Live Demo
 
-This project is an REST API written in PHP.  It computes the Mean, Mode, Median, and Range (MMMR) of any set of numbers. 
+A REST API<sup id="reference-1">[1](#footer-1)</sup> written in PHP.  It computes the Mean, Mode, Median, and Range (MMMR) of any set of numbers. 
 
-You may test the public-facing web interface [here](https://phonegrid.net/numbers).  You may access the API endpoint from your terminal or app via:
+Test the public-facing web interface [here](https://phonegrid.net/numbers).  And, access the API endpoint from your terminal or app with  the following parameters:
 
-* Raw Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`
-* Beautified JSON Output: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`
+* Display Results as **Raw Curl Output**: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`
+* Display Results as **Beautified JSON Output**: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`
 
-The numbers to be analyzed should be separated by commas as shown above.
+The numbers to be analyzed may be separated by comma, whitespace, or both as shown above.
  
 This repo is regulary maintained and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
-# Change Log: Updates for 2019 and 2020
+# Change Log: Updates for 2019 and 2020 (last upadted May 14, 2020)
 
 **1.** Exposed user interface and API endpoint to the public. Also installed an SSL certificate on public server using [LetsEncrypt](https://codesport.io/lamp-stack-advanced/lets-encrypt-tutorial/)
 
@@ -68,7 +68,7 @@ Some of the most interesting updates are the use of Continous Integration (CI) t
 
 
 # Authorship and Credits
-This PHP [Rest API](https:/google.com/search?q=Rest)<sup id="reference-1">[1](#footer-1)</sup> along with this `README` file was developed by **Marcus B.** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
+This PHP [Rest API](https:/google.com/search?q=Rest) along with this `README` file was developed by **Marcus B.** as a part of a code challenge he was asked to complete in January 2016.  He has donated it to **[Code Sport](https://codesport.io?utm_medium=ext-website&utm_campaign=exams-online-apps-public&utm_content=codesport-link-1&utm_source=bitbucket-php-code-challenge&utm_term=code-sport-io)** for use in our small group, classroom instruction.  
 
 The rewrite-rules were found back in 2013 from an unknown website, and have been reposted below in Part 3, Rewrite Rules.
 
