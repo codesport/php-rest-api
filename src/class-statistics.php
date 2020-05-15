@@ -57,7 +57,7 @@ class Statistics {
 	 */
 	public $array_of_numbers; 	// this property should be be private. User modification (exposure) adds no value
 	public $submission_type; 	// this property should be be private. Value is determined and sent by mmmr.php. 
-							    // Expected values for $submission_type: 'web-client' or 'API'
+					// Expected values for $submission_type: 'web-client' or 'API'
 	
 	//may optionally declare as 'protected' if we want to support inheritance 
 	private $mean; 
