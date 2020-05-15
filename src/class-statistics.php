@@ -55,8 +55,8 @@ class Statistics {
 	 * classes. @link https://www.php.net/manual/en/language.oop5.visibility.php
 	 * 
 	 */
-	public $array_of_numbers; 	// this should be be private. user modifying thi adds no value
-	public $submission_type; 	// this should be be private. It is auto-sent by mmmr.php. Expected values: 'web-client' or 'API'
+	public $array_of_numbers; 	// this property should be be private. User modification (exposure) adds no value
+	public $submission_type; 	// this property should be be private. Value is determined and sent by mmmr.php. Expected values: 'web-client' or 'API'
 	
 	//may optionally declare as 'protected' if we want to support inheritance 
 	private $mean; 
@@ -196,7 +196,7 @@ class Statistics {
 	 * 
 	 *  How to compute:
 	 * 
-	 *  1. Array most be sorted first
+	 *  1. Array must be sorted first
 	 *  2. Goal is find position (i.e, index) of median
 	 * 	3. Assume 0-indexed array structure. Therefore:
 	 *  	a. If array size (n) is odd: Median is at index (n-1)/2 
