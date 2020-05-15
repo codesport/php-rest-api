@@ -9,11 +9,11 @@
 * [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
 * [Task Description](#php-application-development-excercise-task-description)
 
-# Quick Start Guide and Live Demo
+# Quick Start Guide and Live Demo (updated May 14, 2020)
 
 A REST API<sup id="reference-1">[1](#footer-1)</sup> written in PHP.  It computes the Mean, Mode, Median, and Range (MMMR) of any set of numbers. 
 
-Test the public-facing web interface [here](https://phonegrid.net/numbers).  And, access the API endpoint from your terminal or app with  the following parameters:
+Test the public-facing web interface [here](https://phonegrid.net/numbers).  Alternatively, access the API endpoint from the command line or your app with  the following parameters:
 
 * Display Results as **Raw Curl Output**: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`
 * Display Results as **Beautified JSON Output**: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`
@@ -22,7 +22,7 @@ The numbers to be analyzed may be separated by comma, whitespace, or both as sho
  
 This repo is regulary maintained and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
-# Change Log: Updates for 2019 and 2020 (last upadted May 14, 2020)
+# Change Log: Updates for 2019 and 2020
 
 **1.** Exposed user interface and API endpoint to the public. Also installed an SSL certificate on public server using [LetsEncrypt](https://codesport.io/lamp-stack-advanced/lets-encrypt-tutorial/)
 
