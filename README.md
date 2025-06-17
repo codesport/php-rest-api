@@ -4,7 +4,7 @@
 # Navigation
 
 * [Quick Start Guide](#php-rest-api-quick-start-guide-and-demo)
-* [Change Log](#change-log-updates-for-2019-202-nd-2025
+* [Change Log](#change-log-updates-for-2019-202-nd-2025)
 * [Authorship and Credits](#authorship-and-credits)
 * [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
 * [Task Description](#php-application-development-excercise-task-description)
@@ -54,9 +54,9 @@ This repo is regulary maintained and is available on [Github](https://github.com
 
    * Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., the travis-ci configuration file) to automate unit testing
 
-**7.* Corrected computation of median to 
+**7.* Corrected computation of median in `class-statistics.php` to 
 
->  the size of the data set n is odd the median is the value at position p where
+>  [Where] the size of the data set n is odd the median is the value at position p where:
 
 $$
 p = \frac{n+1}{2}
@@ -65,8 +65,7 @@ $$
  $$ \tilde{x}= x_p $$ 
 
 
-source: 
-source: 
+source: https://www.calculatorsoup.com/calculators/statistics/mean-median-mode.php
 
 ## Overview of Continuous Integration Tools Used
 

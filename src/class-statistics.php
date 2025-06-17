@@ -25,7 +25,7 @@
  * TODO: Class auto loading via @link https://www.php.net/autoload
  *
  * @package    Fizz Buzz for Company NC001
- * @version    1.0.0 (June 15, 2019)
+ * @version    1.0.1 (June 16, 2025)
  * @since      0.0.1 (January 21, 2016)
  */
 
