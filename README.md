@@ -16,7 +16,7 @@ A REST API<sup id="reference-1">[1](#footer-1)</sup> written in PHP.  It compute
 Test the public-facing web interface [here](https://phonegrid.net/numbers).  Alternatively, access the API endpoint from the command line or your app with  the following parameters:
 
 * Display Results as **Raw Curl Output**: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr`
-* Display Results as **Beautified JSON Output**: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python -m json.tool`
+* Display Results as **Beautified JSON Output**: `curl -d '{"numbers":[ 5, 6, 8, 7, 5 ]}' https://phonegrid.net/numbers/mmmr | python3 -m json.tool`
 
 The numbers to be analyzed may be separated by comma, whitespace, or both as shown above.
  
