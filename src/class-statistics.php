@@ -200,7 +200,7 @@ class Statistics {
 	 *  1. Array must be sorted first
 	 *  2. Goal is find position (i.e, index) of median
 	 * 	3. Assume 0-indexed array structure. Therefore:
-	 *  	a. If array size (n) is odd: Median is at index (n-1)/2 
+	 *  	a. If array size (n) is odd: Median is at index (n+1)/2 
 	 * 		   NB: subtract 1 to make 0-indexed positioning
 	 *  	b. If array size (n) is even (ie., n % 2 == 0): Two elements in the middle are medians at indexes 
 	 * 	       floor((n-1)/2) and at n/2
@@ -208,6 +208,7 @@ class Statistics {
 	 * Tutrials on computing median:
 	 * 
 	 * See section called "Searching for the Median":  @link http://www.drdobbs.com/parallel/finding-the-median-of-two-sorted-arrays/240169222
+     * June 16, 2025 Update: @link https://www.calculatorsoup.com/calculators/statistics/mean-median-mode.php
 	 * Code Examples in popular languages: @link https://www.geeksforgeeks.org/program-for-mean-and-median-of-an-unsorted-array/
 	 * This example will yield incorrect results b/c lack of sort: @link https://gist.github.com/ischenkodv/262906
 	 * Google Search Results: @link https://www.google.com/search?q=what+is+median+of+an+array
@@ -222,7 +223,7 @@ class Statistics {
 		//check if odd (non-zero length modulo 2)
 		if ( $array_length % 2 ) { 
 
-			$this->median = $array_of_numbers[ floor( $array_length - 1 ) / 2 ];
+			$this->median = $array_of_numbers[ floor( $array_length + 1 ) / 2 ];
 
 		} else { //if even we have 2 medians
 

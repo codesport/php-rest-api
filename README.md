@@ -4,7 +4,7 @@
 # Navigation
 
 * [Quick Start Guide](#php-rest-api-quick-start-guide-and-demo)
-* [Change Log](#change-log-updates-for-2019-and-2020)
+* [Change Log](#change-log-updates-for-2019-202-nd-2025
 * [Authorship and Credits](#authorship-and-credits)
 * [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
 * [Task Description](#php-application-development-excercise-task-description)
@@ -22,7 +22,7 @@ The numbers to be analyzed may be separated by comma, whitespace, or both as sho
  
 This repo is regulary maintained and is available on [Github](https://github.com/codesport/php-rest-api) as well as [Bitbucket](https://bitbucket.org/codesport/php-rest-api/).
 
-# Change Log: Updates for 2019 and 2020
+# Change Log: Updates for 2019, 2020, and 2025
 
 **1.** Exposed user interface and API endpoint to the public. Also installed an SSL certificate on public server using [LetsEncrypt](https://codesport.io/lamp-stack-advanced/lets-encrypt-tutorial/)
 
@@ -54,16 +54,30 @@ This repo is regulary maintained and is available on [Github](https://github.com
 
    * Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., the travis-ci configuration file) to automate unit testing
 
+**7.* Corrected computation of median to 
+
+>  the size of the data set n is odd the median is the value at position p where
+
+$$
+p = \frac{n+1}{2}
+$$
+
+ $$ \tilde{x}= x_p $$ 
+
+
+source: 
+source: 
 
 ## Overview of Continuous Integration Tools Used
 
 Some of the most interesting updates are the use of Continous Integration (CI) tools. CI is a software development workflow process which automates build creation and code testing. These are the CI tools used in this project:
 
-* **[PHPUnit](https://phpunit.de/getting-started/phpunit-5.html):** testing of object oriented PHP code.  All method tests and expected results are manual specified in a test file ending in `Test.php` 
+* **[PHPUnit](https://phpunit.de/getting-started/phpunit-5.html):** testing of object oriented PHP code.  All method tests and expected results are manually specified in a test file ending in `Test.php` 
 
-* **[Travis CI](https://travis-ci.org/codesport/php-rest-api):** at the most basic level, it tests your under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
+* **[Travis CI](https://travis-ci.org/codesport/php-rest-api):** code testing under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
 
-* **[Better Code Hub](https://bettercodehub.com/):** a code review tool that checks your GitHub codebase against 10 engineering guidelines devised by the authority in software quality, Software Improvement Group.
+* **[Better Code Hub](https://bettercodehub.com/):** a code review tool that checks your GitHub codebase against 10 engineering guidelines devised by the
+ Software Improvement Group.
 
 
 
