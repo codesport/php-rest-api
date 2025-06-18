@@ -17,9 +17,10 @@
  *  3. Echoes Class output to stdout (terminal)
  *
  * TODO: Add a new class file to accept additional functional (e.g., user authetication)
+ * Updated March 12, 2020 and June 17, 2025
  *
  * @package    Fizz Buzz for Company NC001
- * @version    0.0.1 (January 21, 2016)
+ * @version    1.0.1 (June 16, 2025)
  * @since      0.0.1 (January 21, 2016)
  */
 
@@ -32,7 +33,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	if ( isset( $_POST['string'] ) ) { //captured via form <input name ="string"
 
 	//use of 'htmlspecialchars' is an OCD habit to minimally sanitize html form submission. 
-	$clean_numbers = trim( str_replace( ',', '', htmlspecialchars( $_POST['string'] ) ) ); 
+	$clean_numbers = trim( str_replace( ',', ' ', htmlspecialchars( $_POST['string'] ) ) ); 
+
+    //replace one or more whitespace with single whitespace: https://stackoverflow.com/a/2326133/946957
+    // or $stripped = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $str);
+    $clean_numbers = preg_replace('/\s+/', ' ', $clean_numbers);  
 
 	/*
 	 * May further sanitize input by doing a foreach loop to check if numeric
