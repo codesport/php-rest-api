@@ -54,7 +54,7 @@ This repo is regulary maintained and is available on [Github](https://github.com
 
    * Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., the travis-ci configuration file) to automate unit testing
 
-**7.*& Corrected computation of median in `class-statistics.php` to 
+**7.** Corrected computation of median in `class-statistics.php` to 
 
 >  [Where] the size of the data set n is odd the median is the value at position p where:
 
