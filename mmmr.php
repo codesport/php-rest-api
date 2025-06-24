@@ -28,41 +28,42 @@ include 'src/class-statistics.php';
 include 'src/functions.php';
 
 
-if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-	if ( isset( $_POST['string'] ) ) { //captured via form <input name ="string"
-
-	//use of 'htmlspecialchars' is an OCD habit to minimally sanitize html form submission. 
-	$clean_numbers = trim( str_replace( ',', ' ', htmlspecialchars( $_POST['string'] ) ) ); 
-
-    //replace one or more whitespace with single whitespace: https://stackoverflow.com/a/2326133/946957
-    // or $stripped = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $str);
-    $clean_numbers = preg_replace('/\s+/', ' ', $clean_numbers);  
-
-	/*
-	 * May further sanitize input by doing a foreach loop to check if numeric
-	 * and other sanitziation techniques...
-	 */
-
-	$clean_numbers_array = explode( ' ', $clean_numbers);
-
-	$statistics_for_view = new Statistics( $clean_numbers_array, htmlspecialchars( $_POST['submission_type'] ) );
-
-	
-	$server_response = $statistics_for_view->get_all_statistics();   //$server_response['result'] = $statistics_for_view->get_all_statistics();
-
-	echo json_encode( $server_response );
+    if (isset($_POST['string'])) { //captured via form <input name ="string"
 
 
-	} elseif (isset( $_POST['json'] ) ) { //captured via form <input name ="json"
+        /*
+        * Sanitize User Input
+        *
+        * 1. Remove comma delimiter and change to space delimiter
+        * 2. Use of 'htmlspecialchars' to minimally sanitize html form submission. No impact b/c no DB interactions
+        * 3. Replace one or more whitespace with single whitespace: https://stackoverflow.com/a/2326133/946957
+        *    - Alternatively use something like: $stripped = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $str);
+        * 4. For robustness, may further sanitize input by doing a foreach loop to check if numeric
+        *    and other sanitziation techniques...     
+        */
+        $clean_numbers = trim(str_replace(',', ' ', htmlspecialchars($_POST['string'])));
 
-		if ( is_JSON( $_POST['json'] ) ) {
+        $clean_numbers = preg_replace('/\s+/', ' ', $clean_numbers);
 
-			$array_of_numbers = json_decode( $_POST['json'], true ); //'true' forces to 0-indexed array vs object
+        $clean_numbers_array = explode(' ', $clean_numbers);
 
-			$statistics_for_view = new Statistics( $array_of_numbers['numbers'], htmlspecialchars( $_POST['submission_type'] ) );
+        $statistics_for_view = new Statistics($clean_numbers_array, htmlspecialchars($_POST['submission_type']));
 
-			/*
+
+        $server_response = $statistics_for_view->get_all_statistics();   //$server_response['result'] = $statistics_for_view->get_all_statistics();
+
+        echo json_encode($server_response);
+    } elseif (isset($_POST['json'])) { //captured via form <input name ="json"
+
+        if (is_JSON($_POST['json'])) {
+
+            $array_of_numbers = json_decode($_POST['json'], true); //'true' forces to 0-indexed array vs object
+
+            $statistics_for_view = new Statistics($array_of_numbers['numbers'], htmlspecialchars($_POST['submission_type']));
+
+            /*
 			 * Pedagogical Note:
 			 *
 			 * Since the below 2 lines are repeated in the ensuing 'else{ //API on!' block, 
@@ -71,19 +72,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			 * flow of calling (getting the value of) our object. Code clarity ALWAYS trumps
 			 * cleverness and cute tricks 
 			 */
-			$server_response['result']	= $statistics_for_view->get_all_statistics();
+            $server_response['result']    = $statistics_for_view->get_all_statistics();
 
-			echo json_encode( $server_response );
+            echo json_encode($server_response);
+        } else { //if bad json, force ajax error callback
 
-		} else { //if bad json, force ajax error callback
+            generate_500_error();
+        }
+    } else { //API on!
 
-			generate_500_error();
-
-		}
-
-	} else { //API on!
-
-		/*
+        /*
 		 * Some options for making a curl request from the command line
 		 * 
 		 * 		Verbose: curl --data '{"numbers":[ 5, 6, 8, 7, 5 ]}' --verbose --header "Content-Type: application/json" http://phonegrid.net/numbers/mmmr 
@@ -101,35 +99,29 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		 * cURL official handbook @link https://ec.haxx.se/
 		 */
 
-		 $data_stream = file_get_contents('php://input'); //capture incoming data stream
-		
-		/*
+        $data_stream = file_get_contents('php://input'); //capture incoming data stream
+
+        /*
 		* Can we further filter by specifying 'Content-Type: application/json' 
 		* via $_SERVER["CONTENT_TYPE"] == "application/json" ?
 		* 
 		* Seems awfully messy @ link https://stackoverflow.com/a/31322213/946957
-		*/ 		
-		if ( is_JSON( $data_stream ) ) { 
+		*/
+        if (is_JSON($data_stream)) {
 
-			$array_of_numbers = json_decode( $data_stream, true ); 
+            $array_of_numbers = json_decode($data_stream, true);
 
-			$statistics_for_api = new Statistics( $array_of_numbers['numbers'], 'API' );
+            $statistics_for_api = new Statistics($array_of_numbers['numbers'], 'API');
 
-			$server_response['result'] = $statistics_for_api->get_all_statistics();
+            $server_response['result'] = $statistics_for_api->get_all_statistics();
 
-			echo json_encode( $server_response );
+            echo json_encode($server_response);
+        } else {
 
-		} else {
+            generate_500_error();
+        }
+    }
+} else { // if NOT POST
 
-			generate_500_error();
-
-		}
-
-	}
-
-
-} else {// if NOT POST
-
-	generate_400_error();
-
+    generate_400_error();
 }
