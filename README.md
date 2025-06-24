@@ -4,7 +4,7 @@
 # Navigation
 
 * [Quick Start Guide](#php-rest-api-quick-start-guide-and-demo)
-* [Change Log](#change-log-updates-for-2019-202-nd-2025)
+* [Change Log](#change-log-updates-for-2019-2020-and-2025)
 * [Authorship and Credits](#authorship-and-credits)
 * [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
 * [Task Description](#php-application-development-excercise-task-description)
@@ -54,7 +54,7 @@ This repo is regulary maintained and is available on [Github](https://github.com
 
    * Added [`.travis.yml`](https://github.com/codesport/php-rest-api/blob/php-class-updates/.travis.yml/) (i.e., the travis-ci configuration file) to automate unit testing
 
-**7.** Corrected computation of median in `class-statistics.php` to 
+**7.** Corrected computation of median in `class-statistics.php` to: 
 
 >  [Where] the size of the data set n is odd the median is the value at position p where:
 
@@ -75,8 +75,11 @@ Some of the most interesting updates are the use of Continous Integration (CI) t
 
 * **[Travis CI](https://travis-ci.org/codesport/php-rest-api):** code testing under various deployment environments. It then alerts developers of bugs, quality issues, and failures. 
 
-* **[Better Code Hub](https://bettercodehub.com/):** a code review tool that checks your GitHub codebase against 10 engineering guidelines devised by the
- Software Improvement Group.
+* **NB:** Better Code Hub mentioned below as ceased operation!
+  
+~~* **[Better Code Hub](https://bettercodehub.com/):** a code review tool that checks your GitHub codebase against 10 engineering guidelines devised by the
+ Software Improvement Group.~~
+
 
 
 
