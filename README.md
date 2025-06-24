@@ -9,7 +9,7 @@
 * [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
 * [Task Description](#php-application-development-excercise-task-description)
 
-# Quick Start Guide and Live Demo (updated May 14, 2020)
+# Quick Start Guide and Live Demo (last updated June 20, 2025)
 
 A REST API<sup id="reference-1">[1](#footer-1)</sup> written in PHP.  It computes the Mean, Mode, Median, and Range (MMMR) of any set of numbers. 
 
